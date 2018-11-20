@@ -1,5 +1,5 @@
 [![](https://img.shields.io/badge/IBM%20Cloud-powered-blue.svg)](https://bluemix.net)
-![Platform](https://img.shields.io/badge/platform-NODE-lightgrey.svg?style=flat)
+![Platform](https://img.shields.io/badge/platform-nodejs-lightgrey.svg?style=flat)
 
 # Create and deploy a Node.js Backend For Frontend (BFF) using Express
 
