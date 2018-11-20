@@ -14,7 +14,7 @@ The Backend for Frontend pattern, commonly known as BFFs, helps you focus on exp
 ### IBM Cloud development tools setup (optional)
 
 1. Install [IBM Cloud Developer Tools](https://console.bluemix.net/docs/cli/idt/setting_up_idt.html#add-cli) on your machine
-2. Install the plugin with: `bx plugin install dev -r bluemix`
+2. Install the plugin with: `ibmcloud plugin install dev -r IBM Cloud`
 
 ### IBM Cloud DevOps setup (optional)
 
