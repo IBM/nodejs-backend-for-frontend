@@ -58,12 +58,12 @@ For any given pull request, ask yourself "is this a new feature?" If so, does
 the pull request (or associated issue) contain narrative indicating the need
 for the feature? If not, ask them to provide that information.
 
-  Are new unit tests in place that test all new behaviors introduced? If not, do
-  not merge the feature until they are! Is documentation in place for the new
-  feature? (See the documentation guidelines). If not do not merge the feature
-  until it is! Is the feature necessary for general use cases? Try and keep the
-  scope of any given component narrow. If a proposed feature does not fit that
-  scope, recommend to the user that they maintain the feature on their own, and
-  close the request. You may also recommend that they see if the feature gains
-  traction among other users, and suggest they re-submit when they can show such
-  support.
+Are new unit tests in place that test all new behaviors introduced? If not, do
+not merge the feature until they are! Is documentation in place for the new
+feature? (See the documentation guidelines). If not do not merge the feature
+until it is! Is the feature necessary for general use cases? Try and keep the
+scope of any given component narrow. If a proposed feature does not fit that
+scope, recommend to the user that they maintain the feature on their own, and
+close the request. You may also recommend that they see if the feature gains
+traction among other users, and suggest they re-submit when they can show such
+support.
