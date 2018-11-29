@@ -53,6 +53,5 @@ chart-path : "chart/nodejsbackendforfrontend"
 
 # The IBM version of this configuration
 version : "0.0.3"
-ibm-generated-id : "bfb93a0a-a545-4ab0-8975-b755b673e997"
-ibm-cloud-app-id : "470ce738-7773-4fb0-90f8-aed88091b58e"
+
 credentials-filepath : "server/localdev-config.json, vcap-local.js, credentials.json, localdev-config.json"
