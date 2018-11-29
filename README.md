@@ -3,6 +3,8 @@
 
 # Create and deploy a Node.js Backend For Frontend (BFF) using Express
 
+> We have similar patterns available for [Swift](https://github.com/IBM/swift-backend-for-frontend), [Java Spring](https://github.com/IBM/spring-backend-for-frontend), and [Java Liberty](https://github.com/IBM/java-liberty-backend-for-frontend) as well!
+
 The Backend for Frontend pattern, commonly known as BFFs, helps you focus on exposing business data and services in a form that matches the user interaction requirements. For instance, to optimize a user journey to your cloud solution, it may require a different user journey for the mobile application but a richer, more detailed journey for the Web application. With IBM Cloud, you can build a BFF by using polyglot programming approach to define the BFF- using Node.js, Swift, or Java. The BFF service exposes a RESTful API matching a [Swagger](http://swagger.io) definition.
 
 ![](doc/source/images/architecture.png)
