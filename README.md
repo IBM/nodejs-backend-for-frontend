@@ -24,7 +24,13 @@ Learn more about the Backend for Frontend pattern in this tech talk:
 
 [![BFFs and GraphQL, terms you should know and why](https://img.youtube.com/vi/B5OdK21ZevI/maxresdefault.jpg)](https://www.youtube.com/watch?v=B5OdK21ZevI)
 
-## Requirements
+## Steps
+
+1. [Install development tools](#1-install-development-tools)
+1. [Configuration](#2-configuration)
+1. [Run](#3-run)
+
+## Install development tools
 
 ### Local Development Tools Setup (optional)
 
@@ -43,13 +49,13 @@ Learn more about the Backend for Frontend pattern in this tech talk:
 
 ***Note** you must publish your project to [Github](https://github.com/) for this to work.
 
-## Configuration
+## 2. Configuration
 
 The project contains IBM Cloud specific files that are used to deploy the application as part of an IBM Cloud DevOps flow. The `.bluemix` directory contains files used to define the IBM Cloud toolchain and pipeline for your application. The `manifest.yml` file specifies the name of your application in IBM Cloud, the timeout value during deployment, and which services to bind to.
 
 Service credentials are taken from the VCAP_SERVICES environment variable if running IBM Cloud Cloud Foundry, from individual environment variables per service if running on IBM Cloud Container Service (see ./server/config/mappings.json), or from a config file if running locally, named`./server/config/localdev-config.js`.
 
-## Run
+## 3. Run
 
 ### Using IBM Cloud development CLI
 
