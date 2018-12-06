@@ -41,7 +41,7 @@ Learn more about the Backend for Frontend pattern in this tech talk:
 ### IBM Cloud development tools setup
 
 1. Install [IBM Cloud Developer Tools](https://console.bluemix.net/docs/cli/idt/setting_up_idt.html#add-cli) on your machine
-2. Install the plugin with: `ibmcloud plugin install dev -r IBM Cloud`
+2. Install the plugin with: `ibmcloud plugin install dev -r "IBM Cloud"`
 
 ## 2. Configuration
 
