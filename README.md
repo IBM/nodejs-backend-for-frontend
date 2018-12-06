@@ -72,7 +72,7 @@ Your application is running at: `http://localhost:3000/` in your browser.
 
 #### Session Store
 
-You may see this warning when running `bx dev run`:
+You may see this warning when running `ibmcloud dev run`:
 ```
 Warning: connect.session() MemoryStore is not
 designed for a production environment, as it will leak
