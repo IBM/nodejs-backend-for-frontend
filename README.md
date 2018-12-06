@@ -26,6 +26,8 @@ Learn more about the Backend for Frontend pattern in this tech talk:
 
 ## Steps
 
+> As an alternative to the steps below, you can [create this project as a starter kit](https://console.bluemix.net/developer/appservice/create-app?defaultDeploymentToolchain=&defaultLanguage=NODE&env_id=ibm%3Ayp%3Aus-south&navMode=catalog&starterKit=827c8244-3d95-3fff-b2bd-0841b587d297) on IBM Cloud, which automatically provisions required services, and injects service credentials into a custom fork of this pattern. Then, you can skip directly to step 3 below.
+
 1. [Install development tools](#1-install-development-tools)
 1. [Configuration](#2-configuration)
 1. [Run](#3-run)
