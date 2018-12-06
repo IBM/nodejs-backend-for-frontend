@@ -32,24 +32,16 @@ Learn more about the Backend for Frontend pattern in this tech talk:
 1. [Configuration](#2-configuration)
 1. [Run](#3-run)
 
-## Install development tools
+## 1. Install development tools
 
-### Local Development Tools Setup (optional)
+### Local Development Tools Setup
 
 - Install the latest [NodeJS](https://nodejs.org/en/download/) 6+ LTS version.
 
-### IBM Cloud development tools setup (optional)
+### IBM Cloud development tools setup
 
 1. Install [IBM Cloud Developer Tools](https://console.bluemix.net/docs/cli/idt/setting_up_idt.html#add-cli) on your machine
 2. Install the plugin with: `ibmcloud plugin install dev -r IBM Cloud`
-
-### IBM Cloud DevOps setup (optional)
-
-[![Create Toolchain](https://console.ng.bluemix.net/devops/graphics/create_toolchain_button.png)](https://console.ng.bluemix.net/devops/setup/deploy/)
-
-[IBM Cloud DevOps](https://www.ibm.com/cloud-computing/bluemix/devops) services provides toolchains as a set of tool integrations that support development, deployment, and operations tasks inside IBM Cloud. The `Create Toolchain` button creates a DevOps toolchain and acts as a single-click deploy to IBM Cloud including provisioning all required services.
-
-***Note** you must publish your project to [Github](https://github.com/) for this to work.
 
 ## 2. Configuration
 
