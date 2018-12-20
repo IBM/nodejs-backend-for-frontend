@@ -1,0 +1,19 @@
+version: '2'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile-tools
+    tty: true
+    image: "nodejsbackendforfrontend-express-tools"
+    container_name: "nodejsbackendforfrontend-express-tools"
+    ports: 
+      - "3000:3000"
+      - "9229:9229"
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules 
+    environment:
+      NODE_ENV: "development"
+volumes:
+  node_modules:
