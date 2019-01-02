@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/IBM%20Cloud-powered-blue.svg)](https://bluemix.net)
+[![](https://img.shields.io/badge/IBM%20Cloud-powered-blue.svg)](https://cloud.ibm.com)
 ![Platform](https://img.shields.io/badge/platform-nodejs-lightgrey.svg?style=flat)
 
 # Create and deploy a Node.js Backend For Frontend (BFF) using Express
@@ -40,7 +40,7 @@ Learn more about the Backend for Frontend pattern in this tech talk:
 
 ### IBM Cloud development tools setup
 
-1. Install [IBM Cloud Developer Tools](https://console.bluemix.net/docs/cli/idt/setting_up_idt.html#add-cli) on your machine
+1. Install [IBM Cloud Developer Tools](https://cloud.ibm.com/docs/cli/index.html#overview) on your machine
 2. Install the plugin with: `ibmcloud plugin install dev -r "IBM Cloud"`
 
 ## 2. Configuration
