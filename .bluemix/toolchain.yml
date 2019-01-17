@@ -26,7 +26,7 @@ services:
     parameters:
       services:
         - repo
-      name: "{{name}}"
+      name: nodejsbackendforfrontend
       ui-pipeline: true
       configuration:
         content:
