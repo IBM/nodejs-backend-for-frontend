@@ -53,5 +53,5 @@ form:
       app-name: nodejsbackendforfrontend
       dev-region: "{{region}}"
       api-key: "{{api-key}}"
-      dev-space: "{{space}}"
-      dev-organization: "{{organization}}"
+      dev-space: "{{deploymentSpace}}"
+      dev-organization: "{{deploymentOrg}}"
