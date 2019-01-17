@@ -51,7 +51,7 @@ form:
       $ref: deploy.json
     parameters:
       app-name: nodejsbackendforfrontend
-      dev-region: "{{region}}"
+      dev-region: "{{deploymentRegion}}"
       api-key: "{{api-key}}"
       dev-space: "{{deploymentSpace}}"
       dev-organization: "{{deploymentOrg}}"
