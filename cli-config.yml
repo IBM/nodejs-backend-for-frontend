@@ -14,15 +14,20 @@ container-path-run : "/app"
 container-path-tools : "/app"
 
 # The port mappings between the host and the container in the form [host:container]
-container-port-map : ""
+container-port-map : "3000:3000"
 # The port mappings between the host and the container for the debug port in the form [host:container]
-container-port-map-debug : ""
+container-port-map-debug : "9229:9229"
 
+# The list of additional mounts between the host and the run container in the form [host_path:container_path]
+container-mounts-run:
+   - "./node_modules_linux": "/app/node_modules"
+# The list of additional mounts between the host and the tools container in the form [host_path:container_path]
+container-mounts-tools:
+   - "./node_modules_linux": "/app/node_modules"
 # The name for the dockerfile for the run container
-dockerfile-run : "docker-compose.yml"
+dockerfile-run : "Dockerfile"
 # The name for the dockerfile for the tools container
-dockerfile-tools : "docker-compose-tools.yml"
-use-root-user-tools: true
+dockerfile-tools : "Dockerfile-tools"
 
 # The name of image to create from dockerfile-run
 image-name-run : "nodejsbackendforfrontend-express-run"
@@ -32,7 +37,7 @@ image-name-tools : "nodejsbackendforfrontend-express-tools"
 # The command to build the code and docker image for RUN
 build-cmd-run : "npm install"
 # The command to execute tests for the code in the tools container
-test-cmd : "npm test"
+test-cmd : "npm run test"
 # The command to build the code and docker image for DEBUG
 build-cmd-debug : "npm install"
 

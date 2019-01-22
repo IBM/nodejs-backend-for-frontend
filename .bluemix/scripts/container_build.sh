@@ -10,34 +10,34 @@ echo "ARCHIVE_DIR=${ARCHIVE_DIR}"
 
 # also run 'env' command to find all available env variables
 # or learn more about the available environment variables at:
-# https://console.bluemix.net/docs/services/ContinuousDelivery/pipeline_deploy_var.html#deliverypipeline_environment
+# https://cloud.ibm.com/docs/services/ContinuousDelivery/pipeline_deploy_var.html#deliverypipeline_environment
 
 # To review or change build options use:
-# bx cr build --help
+# ibmcloud cr build --help
 
 echo "Checking registry namespace: ${REGISTRY_NAMESPACE}"
-NS=$( bx cr namespaces | grep ${REGISTRY_NAMESPACE} ||: )
+NS=$( ibmcloud cr namespaces | grep ${REGISTRY_NAMESPACE} ||: )
 if [ -z "${NS}" ]; then
     echo -e "Registry namespace ${REGISTRY_NAMESPACE} not found, creating it."
-    bx cr namespace-add ${REGISTRY_NAMESPACE}
+    ibmcloud cr namespace-add ${REGISTRY_NAMESPACE}
     echo -e "Registry namespace ${REGISTRY_NAMESPACE} created."
 else
     echo -e "Registry namespace ${REGISTRY_NAMESPACE} found."
 fi
 
 echo -e "Existing images in registry"
-bx cr images
+ibmcloud cr images
 
 echo "=========================================================="
 echo -e "BUILDING CONTAINER IMAGE: ${IMAGE_NAME}:${BUILD_NUMBER}"
 set -x
-bx cr build -t ${REGISTRY_URL}/${REGISTRY_NAMESPACE}/${IMAGE_NAME}:${BUILD_NUMBER} .
+ibmcloud cr build -t ${REGISTRY_URL}/${REGISTRY_NAMESPACE}/${IMAGE_NAME}:${BUILD_NUMBER} .
 set +x
-bx cr image-inspect ${REGISTRY_URL}/${REGISTRY_NAMESPACE}/${IMAGE_NAME}:${BUILD_NUMBER}
+ibmcloud cr image-inspect ${REGISTRY_URL}/${REGISTRY_NAMESPACE}/${IMAGE_NAME}:${BUILD_NUMBER}
 
 export PIPELINE_IMAGE_URL="$REGISTRY_URL/$REGISTRY_NAMESPACE/$IMAGE_NAME:$BUILD_NUMBER"
 
-bx cr images
+ibmcloud cr images
 
 echo "=========================================================="
 echo "COPYING ARTIFACTS needed for deployment and testing (in particular build.properties)"

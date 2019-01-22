@@ -26,7 +26,7 @@ services:
     parameters:
       services:
         - repo
-      name: nodejsbackendforfrontend
+      name: "{{name}}"
       ui-pipeline: true
       configuration:
         content:
@@ -51,7 +51,7 @@ form:
       $ref: deploy.json
     parameters:
       app-name: nodejsbackendforfrontend
-      dev-region: "{{deploymentRegion}}"
+      dev-region: "{{region}}"
       api-key: "{{api-key}}"
-      dev-space: "{{deploymentSpace}}"
-      dev-organization: "{{deploymentOrg}}"
+      dev-space: "{{space}}"
+      dev-organization: "{{organization}}"
