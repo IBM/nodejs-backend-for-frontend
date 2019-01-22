@@ -5,7 +5,7 @@
   "type": "object",
   "properties": {
     "api-key": {
-      "description": "IBM Cloud API keys contain permissions that grant access to organizations, spaces, and Kubernetes clusters. You can obtain your API key with 'bx iam api-key-create' or via the console at https://console.bluemix.net/iam/#/apikeys by clicking **Create API key** (Each API key only can be viewed once).",
+      "description": "IBM Cloud API keys contain permissions that grant access to organizations, spaces, and Kubernetes clusters. You can obtain your API key with 'ibmcloud iam api-key-create' or via the console at https://cloud.ibm.com/iam/#/apikeys by clicking **Create API key** (Each API key only can be viewed once).",
       "type": "string"
     },
     "dev-region": {

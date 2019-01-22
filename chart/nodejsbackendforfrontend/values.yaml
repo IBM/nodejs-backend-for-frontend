@@ -11,8 +11,8 @@ image:
       cpu: 200m
       memory: 300Mi
 livenessProbe:
-  initialDelaySeconds: 3000
-  periodSeconds: 1000
+  initialDelaySeconds: 30
+  periodSeconds: 10
 service:
   name: node
   type: NodePort

@@ -5,7 +5,7 @@
 cat build.properties
 
 echo "Check cluster availability"
-IP_ADDR=$(bx cs workers ${PIPELINE_KUBERNETES_CLUSTER_NAME} | grep normal | head -n 1 | awk '{ print $2 }')
+IP_ADDR=$(ibmcloud cs workers ${PIPELINE_KUBERNETES_CLUSTER_NAME} | grep normal | head -n 1 | awk '{ print $2 }')
 if [ -z $IP_ADDR ]; then
     echo "$PIPELINE_KUBERNETES_CLUSTER_NAME not created or workers not ready"
     exit 1
@@ -39,7 +39,7 @@ fi
 echo "RELEASE_NAME: $RELEASE_NAME"
 
 echo "CHECKING CHART (lint)"
-helm lint ${RELEASE_NAME} ./chart/${CHART_NAME}
+helm lint chart/${CHART_NAME}
 
 IMAGE_REPOSITORY=${REGISTRY_URL}/${REGISTRY_NAMESPACE}/${IMAGE_NAME}
 
@@ -123,6 +123,6 @@ helm history ${RELEASE_NAME}
 # kubectl describe pods --selector app=${CHART_NAME} --namespace ${CLUSTER_NAMESPACE}
 
 echo "=========================================================="
-IP_ADDR=$(bx cs workers ${PIPELINE_KUBERNETES_CLUSTER_NAME} | grep normal | head -n 1 | awk '{ print $2 }')
+IP_ADDR=$(ibmcloud cs workers ${PIPELINE_KUBERNETES_CLUSTER_NAME} | grep normal | head -n 1 | awk '{ print $2 }')
 PORT=$(kubectl get services --namespace ${CLUSTER_NAMESPACE} | grep ${RELEASE_NAME} | sed 's/[^:]*:\([0-9]*\).*/\1/g')
 echo -e "View the application health at: http://${IP_ADDR}:${PORT}/health"
