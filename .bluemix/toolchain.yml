@@ -7,7 +7,7 @@ template:
     - build
 
 toolchain:
-  name: nodejsbackendforfrontend
+  name: "{{form.pipeline.parameters.toolchain-name}}"
 
 services:
   # Github repos
@@ -26,7 +26,7 @@ services:
     parameters:
       services:
         - repo
-      name: "{{name}}"
+      name: "{{form.pipeline.parameters.app-name}}"
       ui-pipeline: true
       configuration:
         content:
@@ -50,7 +50,8 @@ form:
     schema:
       $ref: deploy.json
     parameters:
-      app-name: nodejsbackendforfrontend
+      app-name: "{{app-name}}"
+      toolchain-name: "{{toolchain-name}}"
       dev-region: "{{region}}"
       api-key: "{{api-key}}"
       dev-space: "{{space}}"
