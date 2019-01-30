@@ -37,6 +37,8 @@ services:
           API_KEY: "{{form.pipeline.parameters.api-key}}"
           CF_SPACE: "{{form.pipeline.parameters.dev-space}}"
           CF_ORGANIZATION: "{{form.pipeline.parameters.dev-organization}}"
+          CF_HOSTNAME: "{{form.pipeline.parameters.cf-host}}"
+          CF_DOMAIN: "{{form.pipeline.parameters.cf-domain}}"
           REGION_ID: "{{form.pipeline.parameters.dev-region}}"
         execute: true
 
@@ -56,3 +58,5 @@ form:
       api-key: "{{api-key}}"
       dev-space: "{{deploymentSpace}}"
       dev-organization: "{{deploymentOrg}}"
+      cf-host: "{{cf-host}}"
+      cf-domain: "{{cf-domain}}"

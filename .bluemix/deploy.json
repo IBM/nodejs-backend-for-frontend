@@ -25,7 +25,7 @@
       "type": "string"
     }
   },
-  "required": ["dev-region", "dev-organization", "dev-space", "app-name"],  "form": [{
+  "required": ["dev-region", "dev-organization", "dev-space",  "app-name"],  "form": [{
     "type": "validator",
     "url": "/devops/setup/bm-helper/helper.html"
   },
