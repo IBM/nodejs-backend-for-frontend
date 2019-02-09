@@ -60,6 +60,13 @@ stages:
   - type: job
     stage: Build Stage
     job: Build
+  properties:
+  - name: CF_HOSTNAME
+    value: "${CF_HOSTNAME}"
+    type: text
+  - name: CF_DOMAIN
+    value: "${CF_DOMAIN}"
+    type: text
   triggers:
   - type: stage
   permission:
