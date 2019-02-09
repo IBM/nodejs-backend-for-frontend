@@ -5,6 +5,13 @@ stages:
   - type: git
     branch: master
     service: ${REPO}
+  properties:
+  - name: CF_HOSTNAME
+    value: "${CF_HOSTNAME}"
+    type: text
+  - name: CF_DOMAIN
+    value: "${CF_DOMAIN}"
+    type: text
   triggers:
   - type: commit
   jobs:
@@ -26,6 +33,13 @@ stages:
   - type: job
     stage: Build Stage
     job: Build
+  properties:
+  - name: CF_HOSTNAME
+    value: "${CF_HOSTNAME}"
+    type: text
+  - name: CF_DOMAIN
+    value: "${CF_DOMAIN}"
+    type: text
   triggers:
   - type: stage
   jobs:
