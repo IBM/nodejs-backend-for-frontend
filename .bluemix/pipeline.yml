@@ -70,11 +70,11 @@ stages:
     script: |-
       #!/bin/sh
       apk add --no-cache curl
-      if [ "$(curl -Is http://not-used.not-used.net/health  --connect-timeout 3 --max-time 5 --retry 3 --retry-max-time 30 | head -n 1 | grep 200)" != "" ]; then
+      if [ "$(curl -Is http://${CF_HOSTNAME}.${CF_DOMAIN}/health  --connect-timeout 3 --max-time 5 --retry 3 --retry-max-time 30 | head -n 1 | grep 200)" != "" ]; then
         echo "Successfully reached health endpoint"
         echo "====================================================================="
       else
-        echo "Could not reach health endpoint: http://not-used.not-used.net/health"
+        echo "Could not reach health endpoint: http://${CF_HOSTNAME}.${CF_DOMAIN}/health"
         exit 1;
       fi;
     test_type: customimage
