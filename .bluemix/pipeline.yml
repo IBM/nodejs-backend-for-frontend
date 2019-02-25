@@ -5,6 +5,13 @@ stages:
   - type: git
     branch: master
     service: ${REPO}
+  properties:
+  - name: CF_HOSTNAME
+    value: "${CF_HOSTNAME}"
+    type: text
+  - name: CF_DOMAIN
+    value: "${CF_DOMAIN}"
+    type: text
   triggers:
   - type: commit
   jobs:
@@ -26,6 +33,13 @@ stages:
   - type: job
     stage: Build Stage
     job: Build
+  properties:
+  - name: CF_HOSTNAME
+    value: "${CF_HOSTNAME}"
+    type: text
+  - name: CF_DOMAIN
+    value: "${CF_DOMAIN}"
+    type: text
   triggers:
   - type: stage
   jobs:
@@ -50,22 +64,25 @@ stages:
   - type: stage
   permission:
     execute: TOOLCHAIN_ADMINS
+  properties:
+  - name: CF_HOSTNAME
+    value: "${CF_HOSTNAME}"
+    type: text
+  - name: CF_DOMAIN
+    value: "${CF_DOMAIN}"
+    type: text
   jobs:
-  - name: Deploy
-    type: deployer
-    deploy_type: cf
-    target:
-      region_id: ${REGION_ID}
-      organization: ${CF_ORGANIZATION}
-      space: ${CF_SPACE}
-      application: ${CF_APP}
-      api_key: ${API_KEY}
+  - name: Test
+    type: tester
     script: |-
-      export CF_ENDPOINT=$(cf app $CF_APP | grep running)
-      if [[ "$CF_ENDPOINT" != "" ]]; then
-        echo "Your application is up anding running"
+      #!/bin/sh
+      apk add --no-cache curl
+      if [ "$(curl -Is http://not-used.not-used.net/health  --connect-timeout 3 --max-time 5 --retry 3 --retry-max-time 30 | head -n 1 | grep 200)" != "" ]; then
+        echo "Successfully reached health endpoint"
         echo "====================================================================="
       else
-        echo "There was a problem with starting your application"
+        echo "Could not reach health endpoint: http://not-used.not-used.net/health"
         exit 1;
-      fi
+      fi;
+    test_type: customimage
+    docker_image: alpine

@@ -19,6 +19,14 @@ else
   echo -e "Namespace ${CLUSTER_NAMESPACE} created."
 fi
 
+echo "Configuring cluster role binding"
+if kubectl get clusterrolebinding kube-system:default; then
+  echo -e "Cluster role binding found."
+else
+  kubectl create clusterrolebinding kube-system:default --clusterrole=cluster-admin --serviceaccount=kube-system:default
+  echo -e "Cluster role binding created."
+fi
+
 echo "Configuring Tiller (Helm's server component)"
 helm init --upgrade
 kubectl rollout status -w deployment/tiller-deploy --namespace=kube-system
