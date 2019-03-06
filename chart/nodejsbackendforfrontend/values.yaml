@@ -3,7 +3,7 @@
 replicaCount: 1
 revisionHistoryLimit: 1
 image:
-  repository: registry.not-used.net/replace-me-namespace/nodejsbackendforfrontend
+  repository: icr.io/replace-me-namespace/nodejsbackendforfrontend
   tag: v1.0.0
   pullPolicy: Always
   resources:
